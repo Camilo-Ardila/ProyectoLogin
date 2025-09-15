@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|c:\\users\\camil\\documents\\proyectologin\\loginproject\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|c:\\users\\camil\\documents\\proyectologin\\loginproject\\webapplication1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|c:\\users\\camil\\documents\\proyectologin\\loginproject\\webapplication1\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|c:\\users\\camil\\documents\\proyectologin\\loginproject\\webapplication1\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|c:\\users\\camil\\documents\\proyectologin\\loginproject\\webapplication1\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|c:\\users\\camil\\documents\\proyectologin\\loginproject\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE834FBF-DADF-48F9-A024-D40E6FAF6C27}|WebApplication1\\WebApplication1.csproj|c:\\users\\camil\\documents\\proyectologin\\loginproject\\webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,48 +54,48 @@
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Models\\LoginRequest.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Models\\LoginRequest.cs*",
-              "RelativeToolTip": "WebApplication1\\Models\\LoginRequest.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAbbEyfCMvwAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T19:42:11.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Controllers\\UsersController.cs*",
-              "RelativeToolTip": "WebApplication1\\Controllers\\UsersController.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBUAAAAuAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T18:16:22.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "UserModel.cs",
               "DocumentMoniker": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Models\\UserModel.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Models\\UserModel.cs",
               "ToolTip": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Models\\UserModel.cs",
               "RelativeToolTip": "WebApplication1\\Models\\UserModel.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAkwCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAA6wB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T18:01:33.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
               "ToolTip": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\Program.cs",
               "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAUwCYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-15T17:58:01.327Z",
               "EditorCaption": ""
@@ -110,8 +110,7 @@
               "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-15T17:58:50.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T17:58:50.236Z"
             }
           ]
         }

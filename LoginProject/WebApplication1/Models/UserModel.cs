@@ -29,7 +29,10 @@ namespace WebApplication1.Models
             if (Users.Any(u => u.Username == username))
                 return null;
 
-            var user = new UserModel(username, email, password);
+            if (Users.Any(u => u.Email == email))
+                return null;
+
+                var user = new UserModel(username, email, password);
             Users.Add(user);
             return user;
         }
