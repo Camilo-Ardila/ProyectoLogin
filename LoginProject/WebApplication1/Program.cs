@@ -1,37 +1,45 @@
-using WebApplication1.Repositories;
-using WebApplication1.Services;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+// Add controllers
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+    });
+
+// Enable Swagger (optional)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// ✅ CORS: allow Vue frontend on localhost:8080
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:8080")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-        });
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:8080")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
 });
-
-// Register repository + service
-builder.Services.AddSingleton<IUserRepository, InMemoryUserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
+// Swagger UI
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// ✅ Middleware order
 app.UseCors("AllowFrontend");
+
 app.UseAuthorization();
 app.MapControllers();
-app.Run();
+
+// ✅ Run on http://localhost:5000
+app.Run("http://localhost:5000");

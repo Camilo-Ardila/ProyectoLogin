@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
-using WebApplication1.Services;
 
 namespace WebApplication1.Controllers
 {
@@ -8,62 +7,26 @@ namespace WebApplication1.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly IUserService _userService;
-
-        public UsersController(IUserService userService)
-        {
-            _userService = userService;
-        }
-
-        // POST: api/users/register
         [HttpPost("register")]
-        public IActionResult Register([FromBody] User user)
+        public IActionResult Register([FromBody] UserModel request)
         {
-            if (string.IsNullOrWhiteSpace(user.Username) ||
-                string.IsNullOrWhiteSpace(user.Email) ||
-                string.IsNullOrWhiteSpace(user.Password))
-            {
-                return BadRequest("All fields are required.");
-            }
+            var createdUser = UserModel.AddUser(request.Username, request.Email, request.Password);
 
-            var success = _userService.Register(user);
-            if (!success)
-            {
-                return Conflict("Username already exists.");
-            }
+            if (createdUser == null)
+                return Conflict(new { message = "User already exists" });
 
-            return Ok("User registered successfully.");
+            return Ok(new { message = "Register successful" });
         }
 
-        // POST: api/users/login
         [HttpPost("login")]
-        public IActionResult Login([FromBody] User loginData)
+        public IActionResult Login([FromBody] LoginRequest request)
         {
-            if (string.IsNullOrWhiteSpace(loginData.Username) ||
-                string.IsNullOrWhiteSpace(loginData.Password))
-            {
-                return BadRequest("Username and password are required.");
-            }
+            var existingUser = UserModel.ValidateUser(request.Username, request.Password);
 
-            var user = _userService.Login(loginData.Username, loginData.Password);
-            if (user == null)
-            {
-                return Unauthorized("Invalid username or password.");
-            }
+            if (existingUser == null)
+                return Unauthorized(new { message = "Invalid credentials" });
 
-            return Ok(new
-            {
-                Message = "Login successful.",
-                User = new { user.Id, user.Username, user.Email }
-            });
-        }
-
-        // GET: api/users
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var users = _userService.GetAllUsers();
-            return Ok(users);
+            return Ok(new { message = "Login successful" });
         }
     }
 }
