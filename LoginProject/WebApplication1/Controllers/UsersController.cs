@@ -10,7 +10,7 @@ namespace WebApplication1.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody] UserModel request)
         {
-            var createdUser = UserModel.AddUser(request.Username, request.Email, request.Password);
+            var createdUser = UserModel.AddUser(request.Nombre, request.Username, request.Email, request.Password);
 
             if (createdUser == null)
                 return Conflict(new { message = "User already exists" });
@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
         {
-            var existingUser = UserModel.ValidateUser(request.Username, request.Password);
+            var existingUser = UserModel.ValidateUser(request.Usernameormail, request.Password);
 
             if (existingUser == null)
                 return Unauthorized(new { message = "Invalid credentials" });

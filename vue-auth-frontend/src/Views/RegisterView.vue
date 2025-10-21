@@ -3,10 +3,11 @@
     <div class="form-box">
       <h2>Sign Up</h2>
       <form @submit.prevent="handleRegister">
+        <input v-model="nombre" placeholder="Nombre" required />
         <input v-model="username" placeholder="Username" required />
-        <input v-model="email" placeholder="Email" required />
+        <input v-model="email" placeholder="Email" type="email" required />
         <input type="password" v-model="password" placeholder="Password" required />
-        <button type="submit">Register</button>
+        <button type="submit" :disabled="loading">Register</button>
       </form>
       <p v-if="error" class="error">{{ error }}</p>
       <p>
@@ -18,26 +19,48 @@
 </template>
 
 <script>
-import { registerUser } from "../api";
-
 export default {
   name: "RegisterView",
   data() {
-    return { username: "", email: "", password: "", error: "" };
+    return {
+      nombre: "",
+      username: "",
+      email: "",
+      password: "",
+      error: "",
+      loading: false,
+    };
   },
   methods: {
     async handleRegister() {
       this.error = "";
+      this.loading = true;
       try {
-        const response = await registerUser({
-          username: this.username,
-          email: this.email,
-          password: this.password,
+        const response = await fetch("http://localhost:5000/api/users/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre: this.nombre,
+            username: this.username,
+            email: this.email,
+            password: this.password,
+          }),
         });
-        alert(response.data.message);
-        this.$router.push("/");
-      } catch (err) {
-        this.error = err.response?.data?.message || "Server error";
+
+        const data = await response.json();
+
+        if (response.ok) {
+          alert("Registration successful! Please log in.");
+          this.$router.push("/");
+        } else {
+          this.error = data.message || "Registration failed";
+        }
+      } catch (error) {
+        this.error = "An error occurred. Please try again later.";
+      } finally {
+        this.loading = false;
       }
     },
   },
@@ -97,6 +120,11 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 .error {

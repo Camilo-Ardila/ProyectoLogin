@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vngoNQls2H4=",
+  "dgSpecHash": "mScYai+xl98=",
   "success": true,
-  "projectFilePath": "C:\\Users\\camil\\Documents\\ProyectoLogin\\LoginProject\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\camil\\Desktop\\ProyectoLogin\\LoginProject\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\camil\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",

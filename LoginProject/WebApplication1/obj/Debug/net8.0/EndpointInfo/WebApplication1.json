@@ -73,7 +73,7 @@
       "LoginRequest": {
         "type": "object",
         "properties": {
-          "username": {
+          "usernameormail": {
             "type": "string",
             "nullable": true
           },
@@ -90,6 +90,10 @@
           "id": {
             "type": "integer",
             "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
           },
           "username": {
             "type": "string",

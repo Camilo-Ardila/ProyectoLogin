@@ -3,9 +3,9 @@
     <div class="form-box">
       <h2>Login</h2>
       <form @submit.prevent="handleLogin">
-        <input v-model="username" placeholder="Username" required />
+        <input v-model="usernameormail" placeholder="Username or Email" required />
         <input type="password" v-model="password" placeholder="Password" required />
-        <button type="submit">Login</button>
+        <button type="submit" :disabled="loading">Login</button>
       </form>
       <p v-if="error" class="error">{{ error }}</p>
       <p>
@@ -17,25 +17,45 @@
 </template>
 
 <script>
-import { loginUser } from "../api";
-
 export default {
   name: "LoginView",
   data() {
-    return { username: "", password: "", error: "" };
+    return {
+      usernameormail: "",
+      password: "",
+      error: "",
+      loading: false,
+    };
   },
   methods: {
     async handleLogin() {
       this.error = "";
+      this.loading = true;
       try {
-        const response = await loginUser({
-          username: this.username,
-          password: this.password,
+        const response = await fetch("http://localhost:5000/api/users/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            usernameormail: this.usernameormail,
+            password: this.password,
+          }),
         });
-        alert(response.data.message);
-        this.$router.push("/success");
-      } catch (err) {
-        this.error = err.response?.data?.message || "Server error";
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Store the token returned by the backend
+          localStorage.setItem("sessionToken", data.token || "authenticated");
+          this.$router.push("/success");
+        } else {
+          this.error = data.message || "Invalid username or password";
+        }
+      } catch (error) {
+        this.error = "An error occurred. Please try again later.";
+      } finally {
+        this.loading = false;
       }
     },
   },
@@ -95,6 +115,11 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 .error {
