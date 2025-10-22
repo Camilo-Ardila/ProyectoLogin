@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <div class="form-box">
-      <h2>Authentication Successful!</h2>
-      <button @click="logout">Logout</button>
+      <h2>Reservar espacios</h2>
+      <router-link to="/spaces/canchas" class="button">Canchas</router-link>
+      <router-link to="/spaces/aulas" class="button">Aulas</router-link>
+      <router-link to="/spaces/laboratorios" class="button">Laboratorios</router-link>
     </div>
   </div>
 </template>
@@ -10,11 +12,6 @@
 <script>
 export default {
   name: "AuthSuccessView",
-  methods: {
-    logout() {
-      this.$router.push("/");
-    },
-  },
 };
 </script>
 
@@ -41,19 +38,22 @@ h2 {
   color: #333333;
 }
 
-button {
+.button {
+  display: block;
   width: 100%;
   padding: 12px;
-  background-color: #f44336;
+  margin: 10px 0;
+  background-color: #4caf50;
   color: white;
+  text-decoration: none;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   font-weight: bold;
+  text-align: center;
   transition: background-color 0.2s;
 }
 
-button:hover {
-  background-color: #d32f2f;
+.button:hover {
+  background-color: #45a049;
 }
 </style>
