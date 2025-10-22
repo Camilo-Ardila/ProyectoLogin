@@ -1,0 +1,7 @@
+1, Aula101, Aula, Available, 2025-10-22;
+2, Aula102, Aula, Not Available, 2025-10-23;
+3, Aula103, Aula, Available, 2025-10-24;
+4, Cancha1, Cancha, Available, 2025-10-22;
+5, Cancha2, Cancha, Not Available, 2025-10-25;
+6, Lab1, Laboratorio, Available, 2025-10-23;
+7, Lab2, Laboratorio, Not Available, 2025-10-26;

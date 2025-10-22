@@ -8,7 +8,7 @@ namespace WebApplication1.Models
 {
     public class UserModel
     {
-        private static List<UserModel> Users = LoadUsers();
+        public static List<UserModel> Users = LoadUsers();
         private static int _nextId = 1;
         private static readonly string FilePath = @"C:\Users\camil\Desktop\ProyectoLogin\LoginProject\WebApplication1\Models\users.txt";
 
@@ -29,7 +29,7 @@ namespace WebApplication1.Models
             Password = BCrypt.Net.BCrypt.HashPassword(password); // Hash the password
         }
 
-        private static List<UserModel> LoadUsers()
+        public static List<UserModel> LoadUsers()
         {
             var users = new List<UserModel>();
             if (File.Exists(FilePath))
